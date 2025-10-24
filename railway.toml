@@ -1,7 +1,6 @@
 [build]
 builder = "dockerfile"
-dockerfilePath = "solana-rfp-app/backend/Dockerfile"
-dockerContext = "solana-rfp-app/backend"
+dockerfilePath = "Dockerfile.railway"
 
 [deploy]
 restartPolicyType = "on_failure"
