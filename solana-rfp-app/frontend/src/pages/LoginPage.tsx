@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { useAuth } from '../contexts/AuthContext';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 // Extend Window interface for Google Sign-in
 declare global {
@@ -202,7 +202,13 @@ const LoginPage: React.FC = () => {
         </div>
 
         {/* Footer */}
-        <div className="text-center mt-8">
+        <div className="text-center mt-8 space-y-2">
+          <Link
+            to="/landing"
+            className="block text-xs text-arena-text-muted hover:text-white transition-colors"
+          >
+            ← Back to landing page
+          </Link>
           <p className="text-xs text-arena-text-muted">
             © 2025 Solana Foundation. All rights reserved.
           </p>

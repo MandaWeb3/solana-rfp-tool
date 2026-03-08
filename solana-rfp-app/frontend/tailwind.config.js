@@ -20,6 +20,14 @@ module.exports = {
           'success': '#00ff88',
           'warning': '#ffaa00',
           'error': '#ff4444'
+        },
+        // Solana brand palette
+        'solana': {
+          'purple': '#9945FF',
+          'green':  '#14F195',
+          'teal':   '#00FFA3',
+          'dark':   '#0c0c0f',
+          'muted':  '#8b8fa8',
         }
       },
       fontFamily: {
