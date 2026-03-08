@@ -15,18 +15,18 @@ function App() {
     <AuthProvider>
       <Router>
         <Routes>
-          <Route path="/landing" element={<LandingPage />} />
+          <Route path="/" element={<LandingPage />} />
           <Route path="/login" element={<LoginPage />} />
-          <Route path="/*" element={
+          <Route path="/app/*" element={
             <ProtectedRoute>
               <div className="arena-container min-h-screen">
                 <Header />
                 <main>
                   <Routes>
-                    <Route path="/" element={<HomePage />} />
-                    <Route path="/knowledge" element={<KnowledgeBasePage />} />
-                    <Route path="/admin" element={<AdminPage />} />
-                    <Route path="/test-admin" element={<TestAdminPage />} />
+                    <Route index element={<HomePage />} />
+                    <Route path="knowledge" element={<KnowledgeBasePage />} />
+                    <Route path="admin" element={<AdminPage />} />
+                    <Route path="test-admin" element={<TestAdminPage />} />
                   </Routes>
                 </main>
               </div>

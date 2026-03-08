@@ -33,9 +33,9 @@ const Header: React.FC = () => {
           {/* Navigation */}
           <nav className="hidden md:flex space-x-8">
             <Link
-              to="/"
+              to="/app"
               className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
-                location.pathname === '/'
+                location.pathname === '/app'
                   ? 'bg-arena-primary text-white'
                   : 'text-arena-text hover:text-white hover:bg-arena-primary/20'
               }`}
@@ -43,9 +43,9 @@ const Header: React.FC = () => {
               Home
             </Link>
             <Link
-              to="/knowledge"
+              to="/app/knowledge"
               className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
-                location.pathname === '/knowledge'
+                location.pathname === '/app/knowledge'
                   ? 'bg-arena-primary text-white'
                   : 'text-arena-text hover:text-white hover:bg-arena-primary/20'
               }`}
@@ -54,9 +54,9 @@ const Header: React.FC = () => {
             </Link>
             {user?.is_admin && (
               <Link
-                to="/admin"
+                to="/app/admin"
                 className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
-                  location.pathname === '/admin'
+                  location.pathname === '/app/admin'
                     ? 'bg-arena-primary text-white'
                     : 'text-arena-text hover:text-white hover:bg-arena-primary/20'
                 }`}
@@ -142,9 +142,9 @@ const Header: React.FC = () => {
         <div className="md:hidden bg-arena-light-gray border-t border-arena-border">
           <div className="px-2 pt-2 pb-3 space-y-1">
             <Link
-              to="/"
+              to="/app"
               className={`block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 ${
-                location.pathname === '/'
+                location.pathname === '/app'
                   ? 'bg-arena-primary text-white'
                   : 'text-arena-text hover:text-white hover:bg-arena-primary/20'
               }`}
@@ -153,9 +153,9 @@ const Header: React.FC = () => {
               Home
             </Link>
             <Link
-              to="/knowledge"
+              to="/app/knowledge"
               className={`block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 ${
-                location.pathname === '/knowledge'
+                location.pathname === '/app/knowledge'
                   ? 'bg-arena-primary text-white'
                   : 'text-arena-text hover:text-white hover:bg-arena-primary/20'
               }`}
@@ -165,9 +165,9 @@ const Header: React.FC = () => {
             </Link>
             {user?.is_admin && (
               <Link
-                to="/admin"
+                to="/app/admin"
                 className={`block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 ${
-                  location.pathname === '/admin'
+                  location.pathname === '/app/admin'
                     ? 'bg-arena-primary text-white'
                     : 'text-arena-text hover:text-white hover:bg-arena-primary/20'
                 }`}

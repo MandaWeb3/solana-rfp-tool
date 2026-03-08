@@ -35,7 +35,7 @@ const LoginPage: React.FC = () => {
 
       const success = await loginWithGoogle(email, name);
       if (success) {
-        navigate('/');
+        navigate('/app');
       }
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Google login failed');
@@ -106,7 +106,7 @@ const LoginPage: React.FC = () => {
                     localStorage.setItem('user', JSON.stringify(mockUser));
                     
                     // Force page reload to trigger AuthContext update
-                    window.location.href = '/';
+                    window.location.href = '/app';
                   } catch (err) {
                     console.error('Login failed:', err);
                     setError('Login failed: ' + (err as Error).message);
@@ -204,7 +204,7 @@ const LoginPage: React.FC = () => {
         {/* Footer */}
         <div className="text-center mt-8 space-y-2">
           <Link
-            to="/landing"
+            to="/"
             className="block text-xs text-arena-text-muted hover:text-white transition-colors"
           >
             ← Back to landing page

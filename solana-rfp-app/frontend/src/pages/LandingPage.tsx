@@ -46,6 +46,13 @@ const FeatureCard: React.FC<{ icon: React.ReactNode; title: string; description:
   </div>
 );
 
+const StatCard: React.FC<{ value: string; label: string; color: string }> = ({ value, label, color }) => (
+  <div className="text-center px-6 py-4">
+    <div className={`text-4xl font-extrabold mb-1 ${color}`}>{value}</div>
+    <div className="text-sm text-solana-muted">{label}</div>
+  </div>
+);
+
 const LandingPage: React.FC = () => {
   const navigate = useNavigate();
 
@@ -89,7 +96,7 @@ const LandingPage: React.FC = () => {
 
         <div className="flex flex-col sm:flex-row gap-4 items-center">
           <button
-            onClick={() => navigate('/login')}
+            onClick={() => navigate('/app')}
             className="solana-btn-primary font-semibold px-8 py-3.5 rounded-full text-base"
           >
             Get Started
@@ -115,7 +122,7 @@ const LandingPage: React.FC = () => {
           </div>
           <div className="p-6 space-y-3">
             {[
-              { q: 'What is Solana\'s TPS?', a: 'Solana processes up to 65,000 transactions per second...' },
+              { q: "What is Solana's TPS?", a: 'Solana processes up to 65,000 transactions per second...' },
               { q: 'How does Proof of History work?', a: 'PoH is a cryptographic clock that timestamps...' },
               { q: 'What security audits have been performed?', a: 'Multiple independent audits by Kudelski...' },
             ].map(({ q, a }) => (
@@ -130,6 +137,16 @@ const LandingPage: React.FC = () => {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Stats */}
+      <section className="relative z-10 px-6 md:px-16 pb-20">
+        <div className="max-w-3xl mx-auto solana-stats-row rounded-2xl flex flex-col sm:flex-row divide-y sm:divide-y-0 sm:divide-x divide-white/5">
+          <StatCard value="65k+" label="TPS on Solana mainnet" color="text-solana-green" />
+          <StatCard value="400ms" label="Average block time" color="text-solana-teal" />
+          <StatCard value="$0.00025" label="Average transaction fee" color="text-solana-purple" />
+          <StatCard value="100B+" label="Total transactions processed" color="text-solana-green" />
         </div>
       </section>
 
@@ -203,9 +220,51 @@ const LandingPage: React.FC = () => {
         </div>
       </section>
 
+      {/* How it works */}
+      <section className="relative z-10 px-6 md:px-16 pb-24">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-4">How it works</h2>
+          <p className="text-solana-muted text-center mb-14 max-w-xl mx-auto">
+            From raw RFP document to complete response package in three steps.
+          </p>
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                step: '01',
+                title: 'Upload your RFP',
+                description: 'Drag and drop a PDF or paste email text. The system automatically extracts every question.',
+                color: 'text-solana-green',
+                border: 'border-solana-green/20',
+              },
+              {
+                step: '02',
+                title: 'Instant matching',
+                description: 'Each question is matched against the curated Solana knowledge base using semantic similarity.',
+                color: 'text-solana-teal',
+                border: 'border-solana-teal/20',
+              },
+              {
+                step: '03',
+                title: 'Export & send',
+                description: 'Download a formatted Word document or Markdown file ready to submit to the counterparty.',
+                color: 'text-solana-purple',
+                border: 'border-solana-purple/20',
+              },
+            ].map(({ step, title, description, color, border }) => (
+              <div key={step} className={`solana-card rounded-2xl p-6 border ${border}`}>
+                <div className={`text-5xl font-black mb-4 ${color} opacity-30`}>{step}</div>
+                <h3 className="text-lg font-semibold text-white mb-2">{title}</h3>
+                <p className="text-sm text-solana-muted leading-relaxed">{description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA Banner */}
       <section className="relative z-10 px-6 md:px-16 pb-24">
         <div className="max-w-3xl mx-auto solana-cta-card rounded-3xl p-10 md:p-16 text-center">
+          <SolanaLogo className="w-12 h-9 mx-auto mb-6 opacity-80" />
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Ready to streamline your RFP workflow?
           </h2>
@@ -214,7 +273,7 @@ const LandingPage: React.FC = () => {
             minutes.
           </p>
           <button
-            onClick={() => navigate('/login')}
+            onClick={() => navigate('/app')}
             className="solana-btn-primary font-semibold px-10 py-4 rounded-full text-base"
           >
             Open the App

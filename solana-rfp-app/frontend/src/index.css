@@ -128,6 +128,12 @@
   color: #0c0c0f;
 }
 
+/* Stats row */
+.solana-stats-row {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
 /* CTA card */
 .solana-cta-card {
   background: linear-gradient(135deg, rgba(153, 69, 255, 0.12) 0%, rgba(20, 241, 149, 0.08) 100%);
